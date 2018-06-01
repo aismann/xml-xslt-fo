@@ -1,0 +1,32 @@
+apply plugin: 'application'
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	compile("org.apache.avalon.framework:avalon-framework-impl:4.3.1")
+	compile("org.apache.xmlgraphics:fop:1.1")
+}
+
+task wrapper(type:Wrapper) {
+    gradleVersion = '4.0.2'
+}
+
+applicationName = 'XmlXslFoRenderer'
+mainClassName = applicationName
+
+jar {
+    archiveName = "xml-xslt-fo.jar"
+    duplicatesStrategy 'exclude'
+
+    manifest {
+        attributes 'Main-Class':mainClassName
+    }
+
+    exclude ("src/main/resources/**")
+}
+
+applicationDistribution.from("src/main/resources/") {
+    exclude '*.pdf'
+}
