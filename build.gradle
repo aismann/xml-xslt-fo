@@ -13,6 +13,8 @@ task wrapper(type:Wrapper) {
     gradleVersion = '4.0.2'
 }
 
+version = '0.1.0'
+group = 'com.github.euvbonk'
 applicationName = 'XmlXslFoRenderer'
 mainClassName = applicationName
 
@@ -27,6 +29,6 @@ jar {
     exclude ("src/main/resources/**")
 }
 
-applicationDistribution.from("src/main/resources/") {
-    exclude '*.pdf'
+applicationDistribution.from(".") {
+    include 'README.md'
 }
