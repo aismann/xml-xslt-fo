@@ -1,0 +1,9 @@
+# hide idea artifacts
+.idea
+out
+
+# hide gradle artifacts
+.gradle
+build
+
+*~
