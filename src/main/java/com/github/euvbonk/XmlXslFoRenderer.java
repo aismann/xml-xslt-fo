@@ -3,6 +3,8 @@ package com.github.euvbonk;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,7 +25,7 @@ import org.xml.sax.SAXException;
 
 /**
  * @author euvbonk
- * @version 17.05.2018
+ * @version 31.05.2018
  */
 public class XmlXslFoRenderer
 {
@@ -76,6 +78,10 @@ public class XmlXslFoRenderer
         File xmlFile = new File(xml);
         StreamSource xmlSource = new StreamSource(xmlFile);
         FopFactory fopFactory = FopFactory.newInstance();
+        if (Files.exists(Paths.get("fop-config.xconf")))
+        {
+            fopFactory.setUserConfig(new File("fop-config.xconf"));
+        }
         FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
         if (pdf == null)
         {

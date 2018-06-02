@@ -13,7 +13,7 @@ task wrapper(type:Wrapper) {
     gradleVersion = '4.0.2'
 }
 
-ext.Version = '0.1.0'
+ext.Version = '0.2.0'
 group = 'com.github.euvbonk'
 applicationName = 'XmlXslFoRenderer'
 mainClassName = "${group}.${applicationName}"
