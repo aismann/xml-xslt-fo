@@ -13,13 +13,13 @@ task wrapper(type:Wrapper) {
     gradleVersion = '4.0.2'
 }
 
-version = '0.1.0'
+ext.Version = '0.1.0'
 group = 'com.github.euvbonk'
 applicationName = 'XmlXslFoRenderer'
 mainClassName = "${group}.${applicationName}"
 
 jar {
-    archiveName = "xml-xslt-fo-${version}.jar"
+    archiveName = "xml-xslt-fo-${Version}.jar"
     duplicatesStrategy 'exclude'
 
     manifest {
