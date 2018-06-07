@@ -7,3 +7,9 @@ out
 build
 
 *~
+*.xml
+*.pdf
+*.xsl
+*.ttf
+*.xconf
+*.png
