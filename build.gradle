@@ -7,13 +7,14 @@ repositories {
 dependencies {
 	compile("org.apache.avalon.framework:avalon-framework-impl:4.3.1")
 	compile("org.apache.xmlgraphics:fop:1.1")
+    compile("commons-cli:commons-cli:1.4")
 }
 
 task wrapper(type:Wrapper) {
     gradleVersion = '4.0.2'
 }
 
-ext.Version = '0.2.0'
+ext.Version = '0.3.0'
 group = 'com.github.euvbonk'
 applicationName = 'XmlXslFoRenderer'
 mainClassName = "${group}.${applicationName}"

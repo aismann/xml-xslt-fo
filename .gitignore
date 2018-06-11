@@ -13,3 +13,6 @@ build
 *.ttf
 *.xconf
 *.png
+*.css
+*.dtd
+*.html
